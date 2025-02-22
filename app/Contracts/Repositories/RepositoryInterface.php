@@ -7,7 +7,7 @@ use Illuminate\Support\Collection;
 
 interface RepositoryInterface
 {
-    public function create(FormRequest $request) : void;
+    public function store(FormRequest $request) : void;
 
     public function update(FormRequest $request, Model $model) : void;
 

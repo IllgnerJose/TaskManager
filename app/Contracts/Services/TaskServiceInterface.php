@@ -3,19 +3,20 @@
 namespace App\Contracts\Services;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Task;
+use App\Http\Requests\StoreTaskRequest;
 use Illuminate\Support\Collection;
 
 interface TaskServiceInterface
 {
-    public function createTask(FormRequest $request) : void;
+    public function storeTask(StoreTaskRequest $request) : void;
 
-    public function updateTask(FormRequest $request, Model $model) : void;
+    public function updateTask(StoreTaskRequest $request, Task $task) : void;
 
-    public function deleteTask(Model $model) : void;
+    public function deleteTask(Task $task) : void;
 
-    public function finishTask(Model $model) : void;
+    public function finishTask(StoreTaskRequest $request, Task $task) : void;
 
-    public function getAllTasks() : void;
+    public function getAllTasks() : Collection;
 
 }
