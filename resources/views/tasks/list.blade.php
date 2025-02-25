@@ -6,8 +6,12 @@
                 <label for="task">{{$task->description}}</label>
             </div>
             <div class="d-flex gap-2">
-                <i class="bi bi-trash"></i>
-                <i class="bi bi-pencil-fill"></i>
+                <form action="{{route('tasks.destroy', $task->id)}}" method="POST">
+                    @csrf
+                    @method('delete')
+                    <button type="submit" class="btn btn-outline-danger"><i class="bi bi-trash"></i></button>
+                </form>
+                <i class="btn btn-outline-primary bi bi-pencil-fill"></i>
             </div>
         </li>
     @empty

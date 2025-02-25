@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
+use App\Models\Task;
 use Illuminate\View\View;
 use App\Services\TaskService;
 use App\Http\Requests\StoreTaskRequest;
@@ -34,8 +34,10 @@ class TaskController extends Controller
 
     }
 
-    public function destroy()
+    public function destroy(Task $task) : RedirectResponse
     {
+        $this->taskService->deleteTask($task);
 
+        return to_route('tasks.index');
     }
 }
