@@ -35,3 +35,12 @@ test("can update a task", function () {
         ->description->tobe($task["description"])
         ->completed->toBe(0);
 });
+
+test("can destroy a task", function () {
+    $lastTask = Task::latest()->first();
+
+    $this->delete(route("tasks.destroy", $lastTask))
+        ->assertRedirect();
+
+    $this->assertModelMissing($lastTask);
+});
