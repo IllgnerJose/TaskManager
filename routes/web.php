@@ -3,4 +3,4 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
 
-Route::resource('tasks', TaskController::class)->only(['index', 'store', 'edit', 'destroy']);
+Route::resource('tasks', TaskController::class)->only(['index', 'store', 'edit', 'destroy', 'update']);

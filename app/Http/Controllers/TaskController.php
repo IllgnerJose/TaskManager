@@ -29,15 +29,20 @@ class TaskController extends Controller
         return to_route('tasks.index');
     }
 
-    public function edit()
+    public function edit(Task $task) : View
     {
+        return view('tasks.edit', compact('task'));
+    }
 
+    public function update(StoreTaskRequest $request, Task $task) : RedirectResponse
+    {
+        $this->taskService->updateTask($request, $task);
+        return to_route('tasks.index');
     }
 
     public function destroy(Task $task) : RedirectResponse
     {
         $this->taskService->deleteTask($task);
-
         return to_route('tasks.index');
     }
 }

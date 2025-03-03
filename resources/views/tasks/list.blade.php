@@ -2,16 +2,16 @@
     @forelse($tasks as $task)
         <li class="list-group-item d-flex justify-content-between">
             <div>
-                <input class="form-check-input" type="checkbox" name="task" id="task">
-                <label for="task">{{$task->description}}</label>
+                <input class="form-check-input" type="checkbox" name="completed" id="completed" @checked($task->completed)>
+                <label for="completed">{{$task->description}}</label>
             </div>
             <div class="d-flex gap-2">
                 <form action="{{route('tasks.destroy', $task->id)}}" method="POST">
                     @csrf
-                    @method('delete')
+                    @method('DELETE')
                     <button type="submit" class="btn btn-outline-danger"><i class="bi bi-trash"></i></button>
                 </form>
-                <i class="btn btn-outline-primary bi bi-pencil-fill"></i>
+                <a href="{{route('tasks.edit', $task->id)}}" class="btn btn-outline-primary bi bi-pencil-fill"></a>
             </div>
         </li>
     @empty
