@@ -36,6 +36,21 @@ test("can update a task", function () {
         ->completed->toBe(0);
 });
 
+test("can complete a task", function () {
+    $lastTask = Task::latest()->first();
+
+    $task = [
+        "completed" => 1
+    ];
+
+    $this->put(route("tasks.complete", $lastTask->id), $task)
+        ->assertRedirect();
+
+    $lastTask = Task::latest()->first();
+    expect($lastTask)
+        ->completed->toBe(1);
+});
+
 test("can destroy a task", function () {
     $lastTask = Task::latest()->first();
 
@@ -44,3 +59,5 @@ test("can destroy a task", function () {
 
     $this->assertModelMissing($lastTask);
 });
+
+
