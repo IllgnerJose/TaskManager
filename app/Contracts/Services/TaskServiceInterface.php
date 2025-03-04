@@ -15,7 +15,7 @@ interface TaskServiceInterface
 
     public function deleteTask(Task $task) : void;
 
-    public function finishTask(StoreTaskRequest $request, Task $task) : void;
+    public function completeTask(StoreTaskRequest $request, Task $task) : void;
 
     public function getAllTasks() : Collection;
 

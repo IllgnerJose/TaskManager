@@ -23,6 +23,11 @@ class TaskController extends Controller
         return view('tasks.index', compact('tasks'));
     }
 
+    public function create() : View
+    {
+        return view("tasks.create");
+    }
+
     public function store(StoreTaskRequest $request) : RedirectResponse
     {
         $this->taskService->storeTask($request);
@@ -37,6 +42,12 @@ class TaskController extends Controller
     public function update(StoreTaskRequest $request, Task $task) : RedirectResponse
     {
         $this->taskService->updateTask($request, $task);
+        return to_route('tasks.index');
+    }
+
+    public function complete(StoreTaskRequest $request, Task $task) : RedirectResponse
+    {
+        $this->taskService->completeTask($request, $task);
         return to_route('tasks.index');
     }
 

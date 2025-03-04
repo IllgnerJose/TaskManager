@@ -31,7 +31,7 @@ class TaskService implements TaskServiceInterface
         $this->taskRepository->delete($task);
     }
 
-    public function finishTask(StoreTaskRequest $request, Task $task): void
+    public function completeTask(StoreTaskRequest $request, Task $task): void
     {
         $this->taskRepository->update($request, $task);
     }
