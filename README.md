@@ -50,7 +50,7 @@ Task Manager is a simple CRUD application for managing tasks, created solely for
    ```sh
    php artisan serve
    ```
-   The application will be available at `http://127.0.0.1:8000`.
+   The application will be available at `http://127.0.0.1:8000/tasks`.
 
 ## Testing (PEST)
 Run tests using:
