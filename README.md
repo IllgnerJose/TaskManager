@@ -21,8 +21,8 @@ Task Manager is a simple CRUD application for managing tasks, created solely for
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/yourproject.git
-   cd yourproject
+   git clone https://github.com/IllgnerJose/TaskManager.git
+   cd TaskManager
    ```
 
 2. Install dependencies:
@@ -69,5 +69,5 @@ php artisan test
 MIT.
 
 ## Contact
-email: illgnerjosbatista@gmail.com
-linkedin: https://www.linkedin.com/in/illgner-jos%C3%A9-44586925b/
+- email: illgnerjosbatista@gmail.com
+- linkedin: https://www.linkedin.com/in/illgner-jos%C3%A9-44586925b/
